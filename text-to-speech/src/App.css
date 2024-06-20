@@ -8,15 +8,22 @@
 .wrapper{
     width: 70%;
     margin:0 auto;
+    
 }
 .textarea{
     display: flex;
     justify-content: center;
       align-items: center;
      flex-direction: column;
-     background-color: red;
+     border: 1px solid black;
+     border-radius: 6px;
+     padding:0.4em;
         
 }
 .text{
     width: 80%;
+}
+
+#file{
+    display:none;
 }
