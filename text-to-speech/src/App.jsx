@@ -9,9 +9,14 @@ function App() {
 window.addEventListener("load",checkTextTospeechApiInTheBrowser)
     let cols = window.innerWidth-100;
     return (
-    <>
-        <textarea name="text" id="" cols={cols} rows={3} className="text"></textarea>
-        <button onClick={speak}>speak</button>
+    <><div className="wrapper">
+      <div className='textarea'>
+    <textarea name="text" id="" cols={cols} rows={3} className="text"></textarea>
+    <button onClick={speak}>speak</button>
+    </div>
+    </div>
+    
+        
     </>
   )
 }

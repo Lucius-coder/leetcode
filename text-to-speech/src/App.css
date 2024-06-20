@@ -4,8 +4,19 @@
     font-family: "arial",sans-serif;
     
 }
-.text{
+
+.wrapper{
+    width: 70%;
+    margin:0 auto;
+}
+.textarea{
     display: flex;
-    width: 90%;
     justify-content: center;
+      align-items: center;
+     flex-direction: column;
+     background-color: red;
+        
+}
+.text{
+    width: 80%;
 }
