@@ -9,5 +9,6 @@ export function checkTextTospeechApiInTheBrowser(){
 export default function speak(){
     const text=document.querySelector(".text").value
     const utterance =new SpeechSynthesisUtterance(text)
+    console.dir(utterance)
     speechSynthesis.speak(utterance)
 }
