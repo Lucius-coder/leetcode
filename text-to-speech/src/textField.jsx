@@ -11,7 +11,7 @@ textField() {
     <>
     <div className="wrapper">
       <div className='textarea'>
-    <textarea name="text" id="" className="text"></textarea>
+    <textarea name="text" id="" className="text" placeholder=' paste your text here'></textarea>
     <input type="file" name="" id="file" />
     <div className="buttonContainer">
    <button onClick={()=>{UploadScript("#file")
