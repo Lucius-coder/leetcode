@@ -16,8 +16,8 @@ export default function textField() {
             className="text"
             placeholder=" paste your text here"
           ></textarea>
-          <form action="http://localhost:5000/upload" method="post" encType="multipart/form-data">
-            <input type="file" name="" id="file" accept=".pdf,.txt" />
+          <form action="http://localhost:5000/uploads" method="post" encType="multipart/form-data">
+            <input type="file" name="uploads" id="file" accept=".pdf,.txt" />
             <div className="buttonContainer">
               <button
                 onClick={() => {
