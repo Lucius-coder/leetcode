@@ -16,12 +16,12 @@ export default function textField() {
             className="text"
             placeholder=" paste your text here"
           ></textarea>
-          <form action="http://localhost:5000/uploads" method="post" encType="multipart/form-data">
+          <form  encType="multipart/form-data" id="form">
             <input type="file" name="uploads" id="file" accept=".pdf,.txt" />
             <div className="buttonContainer">
               <button
                 onClick={() => {
-                  UploadScript("#file");
+              UploadScript("#form",5000,"uploads")
                 }}
                 type="submit"
               >

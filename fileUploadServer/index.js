@@ -12,10 +12,17 @@ const upload = multer({
     }
   })
 });
+let fileList=["these are the files uploaded to the server"]
 app.post("/uploads", upload.single("uploads"), (req, res) => {
-  console.log(req.file);
+  console.log(req.file)
+  fileList.push(req.file.originalname)
   console.log("File uploaded");
 });
+app.get("/uploads",(req,res)=>{
+let fileData=JSON.stringify(fileList)
+
+  res.json(fileData)
+})
 app.listen(5000, () => {
   console.log("server listening ...");
 });
