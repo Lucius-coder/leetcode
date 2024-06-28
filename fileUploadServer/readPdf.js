@@ -9,4 +9,13 @@ async function extractTextFromPDF(filepath){
     }catch (error){
 console.log(error)
     }
-}
+} 
+(async ()=>{
+    try{
+        const filePath= path.join('fileUploadServer', 'uploads', 'Exercise problems for Advanced Macroeconomics ( PDFDrive ).pdf');
+        const text=await extractTextFromPDF(filePath)
+        console.log(text)
+    }catch(error){
+        console.log(error)
+      }
+})()
