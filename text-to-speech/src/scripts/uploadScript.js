@@ -14,12 +14,12 @@ el.addEventListener("submit",async(e)=>{
             })
             if(response.ok ===200){
                 let data=await response.text()
-                console.log(response)
+                console.log(data)
             }else{
                 console.log("the upload failed")
             }
         }catch(error){
-            console.log("something went wrong")
+            console.log("something went wrong",error)
         }
         
     }
