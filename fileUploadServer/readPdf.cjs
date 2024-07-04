@@ -9,13 +9,9 @@ async function readPdf(filename) {
     const data = await pdf(dataBuffer);
 
     // Number of pages
-    console.log('Number of pages: ', data.numpages);
-
-    // Number of rendered pages
-    console.log('Number of rendered pages: ', data.numrender);
-
+   
     // Get all text
-  
+  console.log(data)
     return data.text
 
     // Get text from a specific page

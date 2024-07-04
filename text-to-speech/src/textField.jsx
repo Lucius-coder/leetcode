@@ -3,6 +3,7 @@ import speak from "./scripts/speechScript.js";
 import UploadScript from "./scripts/uploadScript.js";
 import { checkTextTospeechApiInTheBrowser } from "./scripts/speechScript.js";
 import "./App.css";
+import fetchUploadText from "./scripts/fetchUploadText.js";
 export default function textField() {
   window.addEventListener("load", checkTextTospeechApiInTheBrowser);
 
@@ -12,7 +13,7 @@ export default function textField() {
         <div className="textarea">
           <textarea
             name="text"
-            id=""
+            id="text"
             className="text"
             placeholder=" paste your text here"
           ></textarea>
@@ -22,6 +23,7 @@ export default function textField() {
               <button
                 onClick={() => {
               UploadScript("#form",5000,"uploads")
+              // fetchUploadText(5000,"uploads")
                 }}
                 type="submit"
               >
