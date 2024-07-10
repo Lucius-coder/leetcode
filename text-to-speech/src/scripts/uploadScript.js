@@ -20,7 +20,14 @@ export default function UploadScript(element, port, route) {
           let data = await response.json();
           let parsedData = JSON.stringify(data);
           let text = JSON.parse(parsedData);
-          textInput.value = text[0];
+          let count=0
+          textInput.value = text[count];
+          if(text.length===1){
+            count=0;
+          }else{
+            count++
+          }
+
           console.log(text)
         } else {
           console.log("the upload failed");

@@ -1,11 +1,11 @@
-import express from 'express';
-import multer from 'multer';
-import path from 'path';
-import { readPdf } from './readPdf.cjs';
-import cors from "cors"
+import express from "express";
+import multer from "multer";
+import path from "path";
+import { readPdf } from "./readPdf.cjs";
+import cors from "cors";
 
 const app = express();
-app.use(cors())
+app.use(cors());
 
 const upload = multer({
   storage: multer.diskStorage({
@@ -14,8 +14,8 @@ const upload = multer({
     },
     filename: (req, file, cb) => {
       cb(null, file.originalname);
-    }
-  })
+    },
+  }),
 });
 
 let fileList = [];
@@ -27,7 +27,7 @@ app.post("/uploads", upload.single("uploads"), async (req, res) => {
       let readPdfData = await readPdf(req.file.path);
       fileList.push(readPdfData);
       res.json(fileList);
-      console.log(readPdfData)
+      console.log(readPdfData);
     } else {
       console.log("Uploaded file is not a PDF");
       // Consider handling non-PDF uploads differently (e.g., error message)
@@ -37,7 +37,6 @@ app.post("/uploads", upload.single("uploads"), async (req, res) => {
     res.status(500).send("Error processing file "); // Send generic error response
   }
 });
-
 
 let port = 5000;
 

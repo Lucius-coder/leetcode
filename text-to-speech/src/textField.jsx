@@ -17,13 +17,13 @@ export default function textField() {
             className="text"
             placeholder=" paste your text here"
           ></textarea>
-          <form  encType="multipart/form-data" id="form">
-            <input type="file" name="uploads" id="file" accept=".pdf,.txt" />
+          <form encType="multipart/form-data" id="form">
+            <input type="file" name="uploads" id="file" accept=".pdf" />
             <div className="buttonContainer">
               <button
                 onClick={() => {
-              UploadScript("#form",5000,"uploads")
-              // fetchUploadText(5000,"uploads")
+                  UploadScript("#form", 5000, "uploads");
+                  // fetchUploadText(5000,"uploads")
                 }}
                 type="submit"
               >
