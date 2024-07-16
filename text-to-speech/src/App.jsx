@@ -1,17 +1,12 @@
-import { useState } from 'react'
-import TextField from './textField.jsx';
-
+import { useState } from "react";
+import TextField from "./textField.jsx";
 
 function App() {
-
-
-    return (
+  return (
     <>
-    
-  <TextField></TextField>
-        
+      <TextField></TextField>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

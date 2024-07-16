@@ -3,7 +3,7 @@ import speak from "./scripts/speechScript.js";
 import UploadScript from "./scripts/uploadScript.js";
 import { checkTextTospeechApiInTheBrowser } from "./scripts/speechScript.js";
 import "./App.css";
-import fetchUploadText from "./scripts/fetchUploadText.js";
+
 export default function textField() {
   window.addEventListener("load", checkTextTospeechApiInTheBrowser);
 
