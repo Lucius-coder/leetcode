@@ -16,22 +16,22 @@ export default function UploadScript(element, port, route) {
           body: formData,
         });
 
-        if (response.status === 200) {
-          let data = await response.json();
-          let parsedData = JSON.stringify(data);
-          let text = JSON.parse(parsedData);
-          let count=0
-          textInput.value = text[count];
-          if(text.length===1){
-            count=0;
-          }else{
-            count++
-          }
+        // if (response.status === 200) {
+        //   let data = await response.json();
+        //   let parsedData = JSON.stringify(data);
+        //   let text = JSON.parse(parsedData);
+        //   let count=0
+        //   textInput.value = text[count];
+        //   if(text.length===1){
+        //     count=0;
+        //   }else{
+        //     count++
+        //   }
 
-          console.log(text)
-        } else {
-          console.log("the upload failed");
-        }
+        //   console.log(text)
+        // } else {
+        //   console.log("the upload failed");
+        // }
       } catch (error) {
         console.log("something went wrong", error);
       }

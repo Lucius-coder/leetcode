@@ -25,8 +25,7 @@ app.post("/uploads", upload.single("uploads"), async (req, res) => {
   try {
     if (req.file.mimetype === "application/pdf") {
       let readPdfData = await readPdf(req.file.path);
-      fileList.push(readPdfData);
-      res.json(fileList);
+     
       console.log(readPdfData);
     } else {
       console.log("Uploaded file is not a PDF");
