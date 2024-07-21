@@ -3,7 +3,7 @@ import express from "express";
 import multer from "multer";
 import path from "path";
 import { readPdf } from "./readPdf.cjs";
-import {insertIntoTable} from "./database";
+import { insertIntoTable, query } from "./database.js";
 import cors from "cors";
 
 // Create an Express application
@@ -37,8 +37,17 @@ app.post("/uploads", upload.single("uploads"), async (req, res) => {
     if (req.file.mimetype === "application/pdf") {
       // Read the contents of the PDF file
       let readPdfData = await readPdf(req.file.path);
-     let fileInsertion=insertIntoTable("fileinformation",["userID","filename","file","filetext"],[1,req.file.originalname,req.file.path,readPdfData.text])
+      let fileInsertion = await insertIntoTable(
+        "fileinformation",
+        [ "filename", "file", "filetext"],
+        [ req.file.originalname, req.file.path, readPdfData]
+      );
+      let tableName="fileinformation"
+      let databaseInformation = await query(`select * from ${tableName}`);
+      console.log(databaseInformation);
+      res.json(databaseInformation)
       // Log the extracted data from the PDF
+
       console.log(readPdfData);
     } else {
       // Log a message if the uploaded file is not a PDF
