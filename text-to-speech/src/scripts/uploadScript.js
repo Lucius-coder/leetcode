@@ -18,28 +18,30 @@ export default function UploadScript(element, port, route) {
       // Create FormData object and append the file
       let formData = new FormData()
       formData.append("uploads", file)
+      async function uploadResponse(){
+        if (response.status === 200) {
+          // If upload successful, process the response
       
+            let data = await response.json()
+            let parsedData = JSON.stringify(data)
+            let text = JSON.parse(parsedData)
+            
+            console.log(text)
+            
+          return text;
+          
+        } else {
+          console.log("the upload failed")
+        }
+      }
       try {
         // Send POST request to upload the file
         const response = await fetch(`http://localhost:${port}/${route}`, {
           method: "POST",
           body: formData,
         })
-
-        if (response.status === 200) {
-          // If upload successful, process the response
-          let data = await response.json()
-          let parsedData = JSON.stringify(data)
-          let text = JSON.parse(parsedData)
-          let count = 0
-          
-          // Set the text input value to the uploaded file content
-          textInput.value = text[count].filetext
-        
-          console.log(text)
-        } else {
-          console.log("the upload failed")
-        }
+uploadResponse()
+       
       } catch (error) {
         console.log("something went wrong", error)
       }
